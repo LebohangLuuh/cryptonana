@@ -2,8 +2,6 @@
 
 A fast and responsive web app to search and explore information about countries worldwide.
 
-Live Demo: https://countryinfo‑wheat.vercel.app/countries
-
 ---
 
 ## ✅ Features
