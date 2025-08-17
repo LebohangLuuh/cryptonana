@@ -1,13 +1,23 @@
 <div class="w-screen h-full flex flex-col overflow-hidden">
+  <app-search />
 
-    <app-search />
+  <!-- Show countries if available -->
+  <div
+    *ngIf="!hasError() && countryService.countries().length > 0; else fallback"
+    class="w-full flex-1 pt-40 pb-16 md:pt-40 px-4 md:px-14 gap-4 md:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-y-scroll overflow-x-hidden snap-y">
 
-    <div
-        class="w-full flex-1 pt-40 pb-16 md:pt-40 px-4 md:px-14 gap-4 md:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-y-scroll overflow-x-hidden snap-y">
+    @for (item of countryService.countries(); track $index) {
+      <app-country-card [country]="item" />
+    }
+  </div>
 
-        @for(item of countryService.countries(); track $index) {
-        <app-country-card [country]="item" />
-        }
+  <!-- Fallback video -->
+  <ng-template #fallback>
+    <div class="w-full h-full flex items-center justify-center ">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover">
+        <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
-
+  </ng-template>
 </div>
