@@ -1,9 +1,13 @@
 <div
-    class="w-full h-40 flex flex-col items-center justify-center gap-4 pt-8 pb-8 absolute top-0 left-0 bg-slate-100 z-50">
-    <div class="font-thin text-3xl">Findout about countries</div>
+  class="w-full h-40 flex flex-col items-center justify-center gap-4 pt-8 pb-8 
+         absolute top-0 left-0 bg-gray-400/20 z-50">
+             <div class="font-normal text-blue-500 text-5xl">Find out about countries</div>
     <div class="h-16 rounded-3xl overflow-hidden flex justify-center shadow">
-        <input type="text" #search class="bg-white px-4 py-6 outline-0 w-76" placeholder="Country name...">
-        <button (click)="  onSearch(search.value) " class="bg-slate-100 px-8 cursor-pointer"><i
+        <input type="text" #search class="bg-white p-3 text-gray-500 outline-0 w-76"
+            placeholder="Search by Country Name...">
+        <button  (click)="  onSearch(search.value) " class="bg-slate-300 hover:bg-slate-300 px-8 cursor-pointer "><i
                 class="bi bi-search"></i></button>
     </div>
 </div>
+
+
